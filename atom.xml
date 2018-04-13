@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小浣熊熊采坑录</title>
+  
+  <subtitle>xmwarrior log</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-04-13T02:02:44.361Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>XMwarrior</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js规范</title>
+    <link href="http://yoursite.com/2018/04/13/js%E8%A7%84%E8%8C%83/"/>
+    <id>http://yoursite.com/2018/04/13/js规范/</id>
+    <published>2018-04-13T01:55:19.000Z</published>
+    <updated>2018-04-13T02:02:44.361Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;注释&quot;&gt;&lt;a href=&quot;#注释&quot; class=&quot;headerlink&quot; title=&quot;注释&quot;&gt;&lt;/a&gt;注释&lt;/h2&gt;&lt;h4 id=&quot;原则&quot;&gt;&lt;a href=&quot;#原则&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>css规范</title>
+    <link href="http://yoursite.com/2018/04/13/css%E8%A7%84%E8%8C%83/"/>
+    <id>http://yoursite.com/2018/04/13/css规范/</id>
+    <published>2018-04-13T01:55:09.000Z</published>
+    <updated>2018-04-13T02:02:13.167Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; class=&quot;headerlink&quot; title=&quot;命名&quot;&gt;&lt;/a&gt;命名&lt;/h2&gt;&lt;p&gt; id采用驼峰式命名；&lt;br&gt; 类名使用小写字母，以中划线分隔。&lt;/p&gt;
+&lt;h2 id=&quot;正确使用-Display-的属性&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>html规范</title>
+    <link href="http://yoursite.com/2018/04/13/html%E8%A7%84%E8%8C%83/"/>
+    <id>http://yoursite.com/2018/04/13/html规范/</id>
+    <published>2018-04-13T01:54:55.000Z</published>
+    <updated>2018-04-13T02:07:40.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;h2 id=&quot;head&quot;&gt;&lt;a href=&quot;#head&quot; class=&quot;headerlink&quot; title=&quot;head&quot;&gt;&lt;/a&gt;head&lt;/h2&gt;&lt;p&gt;head基本内容：&lt;br&gt;&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>函数节流</title>
+    <link href="http://yoursite.com/2018/04/13/%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/"/>
+    <id>http://yoursite.com/2018/04/13/函数节流/</id>
+    <published>2018-04-13T01:15:40.000Z</published>
+    <updated>2018-04-13T01:15:40.469Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

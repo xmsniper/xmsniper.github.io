@@ -41,6 +41,9 @@
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
     
     
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
@@ -75,7 +78,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>小浣熊熊采坑录 - xmwarrior log</title>
+    <title>js规范 | 小浣熊熊采坑录 - xmwarrior log</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -95,7 +98,7 @@
   <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
   <ul id="menu">
     
-    <li><a href="/" class="current">Home</a></li>
+    <li><a href="/">Home</a></li>
     
     <li><a href="/archives/">Archives</a></li>
     
@@ -118,25 +121,24 @@
         <div class="main-container">
           <div class="content">
             
-
-<section id="index" class="index">
+<section id="post" class="post">
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
+  <article class="post-container card " itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/js规范/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="XMwarrior">
-        <meta itemprop="description" content="日常积累收录">
-        <meta itemprop="image" content="/images/avatar.png">
+       <meta itemprop="name" content="XMwarrior">
+       <meta itemprop="description" content="日常积累收录">
+       <meta itemprop="image" content="/images/avatar.png">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小浣熊熊采坑录">
+       <meta itemprop="name" content="小浣熊熊采坑录">
       </span>
     </div>
     <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/13/js规范/" itemprop="url">js规范</a>
-      </h2>
+      <h1 class="post-title" itemprop="name headline">
+       <span class="">js规范</span>
+      </h1>
       <div class="post-meta">
         
         <span class="post-date">
@@ -148,7 +150,6 @@
       </div>
     </header>
     <main class="post-body" itemprop="articleBody">
-      
       <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h4 id="原则"><a href="#原则" class="headerlink" title="原则"></a><strong>原则</strong></h4><p>As short as possible（如无必要，勿增注释）：尽量提高代码本身的清晰性、可读性。</p>
 <p>As long as necessary（如有必要，尽量详尽）：合理的注释、空行排版等，可以让代码更易阅读、更具美感。</p>
 <h4 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a><strong>单行注释</strong></h4><p>必须独占一行。<code>//</code> 后跟一个空格，缩进与下一行被注释说明的代码一致。</p>
@@ -299,206 +300,48 @@
 <li>开发环境统一严格模式，所有js文件头部统一添加<code>/*use strict*/</code>;<br>2.</li>
 </ol>
 
-      
     </main>
     <footer class="post-footer">
+      
       
     </footer>
   </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/css规范/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="XMwarrior">
-        <meta itemprop="description" content="日常积累收录">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小浣熊熊采坑录">
-      </span>
-    </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/13/css规范/" itemprop="url">css规范</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-13T09:55:09+08:00">2018-04-13</time>
-        </span>
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p> id采用驼峰式命名；<br> 类名使用小写字母，以中划线分隔。</p>
-<h2 id="正确使用-Display-的属性"><a href="#正确使用-Display-的属性" class="headerlink" title="正确使用 Display 的属性"></a>正确使用 Display 的属性</h2><p>Display 属性会影响页面的渲染，请合理使用。</p>
-<ul>
-<li>display: inline后不应该再使用 width、height、margin、padding 以及 float；</li>
-<li>display: inline-block 后不应该再使用 float；</li>
-<li>display: block 后不应该再使用 vertical-align；</li>
-<li>display: table-* 后不应该再使用 margin 或者 float；</li>
-</ul>
-<h2 id="不滥用-Float"><a href="#不滥用-Float" class="headerlink" title="不滥用 Float"></a>不滥用 Float</h2><p>Float在渲染时计算量比较大，尽量减少使用。</p>
-<h2 id="多利用硬件能力，如通过-3D-变形开启-GPU-加速"><a href="#多利用硬件能力，如通过-3D-变形开启-GPU-加速" class="headerlink" title="多利用硬件能力，如通过 3D 变形开启 GPU 加速"></a>多利用硬件能力，如通过 3D 变形开启 GPU 加速</h2><p>一般在 Chrome 中，3D或透视变换（perspective transform）CSS属性和对 opacity 进行 CSS 动画会创建新的图层，在硬件加速渲染通道的优化下，GPU 完成 3D 变形等操作后，将图层进行复合操作（Compesite Layers），从而避免触发浏览器大面积重绘和重排。<br>注：3D 变形会消耗更多的内存和功耗。<br>使用 translate3d 右移 500px 的动画流畅度要明显优于直接使用 left：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.ball-1 &#123;</span><br><span class="line">  transition: -webkit-transform .5s ease;</span><br><span class="line">  -webkit-transform: translate3d(0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line">.ball-1.slidein&#123;</span><br><span class="line">  -webkit-transform: translate3d(500px, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line">.ball-2 &#123;</span><br><span class="line">  transition: left .5s ease; left：0;</span><br><span class="line">&#125;</span><br><span class="line">.ball-2.slidein &#123;</span><br><span class="line">  left：500px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="提升-CSS-选择器性能"><a href="#提升-CSS-选择器性能" class="headerlink" title="提升 CSS 选择器性能"></a>提升 CSS 选择器性能</h2><p>CSS 选择器对性能的影响源于浏览器匹配选择器和文档元素时所消耗的时间，所以优化选择器的原则是应尽量避免使用消耗更多匹配时间的选择器。而在这之前我们需要了解 CSS 选择器匹配的机制， 如子选择器规则：<br><code>#header &gt; a {font-weight:blod;}</code><br>我们中的大多数人都是从左到右的阅读习惯，会习惯性的设定浏览器也是从左到右的方式进行匹配规则，推测这条规则的开销并不高。<br>我们会假设浏览器以这样的方式工作：寻找 id 为 header 的元素，然后将样式规则应用到直系子元素中的 a 元素上。我们知道文档中只有一个 id 为 header 的元素，并且它只有几个 a 元素的子节点，所以这个 CSS 选择器应该相当高效。<br>事实上，却恰恰相反，CSS 选择器是从右到左进行规则匹配。了解这个机制后，例子中看似高效的选择器在实际中的匹配开销是很高的，浏览器必须遍历页面中所有的 a 元素并且确定其父元素的 id 是否为 header 。<br>如果把例子的子选择器改为后代选择器则会开销更多，在遍历页面中所有 a 元素后还需向其上级遍历直到根节点。<br><code>#header  a {font-weight:blod;}</code><br>理解了CSS选择器从右到左匹配的机制后，明白只要当前选择符的左边还有其他选择符，样式系统就会继续向左移动，直到找到和规则匹配的选择符，或者因为不匹配而退出。我们把最右边选择符称之为关键选择器。——更多详情</p>
-<ol>
-<li><p><strong>避免使用通用选择器</strong><br>浏览器匹配文档中所有的元素后分别向上逐级匹配 class 为 content 的元素，直到文档的根节点。因此其匹配开销是非常大的，所以应避免使用关键选择器是通配选择器的情况。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* bad */</span><br><span class="line">.content * &#123;color: red;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>避免使用标签或 class 选择器限制 id 选择器</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* bad */</span><br><span class="line">button#backButton &#123;…&#125;</span><br><span class="line">/* good */</span><br><span class="line">#newMenuIcon &#123;…&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>避免使用标签限制 class 选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* bad */</span><br><span class="line">treecell.indented &#123;…&#125;</span><br><span class="line">/* good */</span><br><span class="line">.treecell-indented &#123;…&#125;</span><br><span class="line">/* better */</span><br><span class="line">.hierarchy-deep &#123;…&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>避免使用多层标签选择器。使用 class 选择器替换，减少css查找</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* bad */</span><br><span class="line">treeitem[mailfolder=&quot;true&quot;] &gt; treerow &gt; treecell &#123;…&#125;</span><br><span class="line">/* good */</span><br><span class="line">.treecell-mailfolder &#123;…&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>避免使用子选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* bad */</span><br><span class="line">treehead treerow treecell &#123;…&#125;</span><br><span class="line">/* good */</span><br><span class="line">treehead &gt; treerow &gt; treecell &#123;…&#125;</span><br><span class="line">/* better */</span><br><span class="line">.treecell-header &#123;…&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用继承</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* bad */</span><br><span class="line">#bookmarkMenuItem &gt; .menu-left &#123; list-style-image: url(blah) &#125;</span><br><span class="line">/* good */</span><br><span class="line">#bookmarkMenuItem &#123; list-style-image: url(blah) &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li>不允许有空的规则；</li>
-<li>元素选择器用小写字母；</li>
-<li>去掉数字中不必要的小数点和末尾的0；</li>
-<li>属性值’0’后面不要加单位；</li>
-<li>同个属性不同前缀的写法需要在垂直方向保持对齐；</li>
-<li>无前缀的标准属性应该写在有前缀的属性后面；</li>
-<li>不要在同个规则里出现重复的属性，如果重复的属性是连续的则没关系；</li>
-<li>不要在一个文件里出现两个相同的规则；</li>
-<li>用 border: 0; 代替 border: none;；</li>
-<li>选择器不要超过4层（在scss中如果超过4层应该考虑用嵌套的方式来写）；</li>
-<li>发布的代码中不要有 @import；</li>
-<li>尽量少用’*’选择器。<h3 id="nec-网易-的reset"><a href="#nec-网易-的reset" class="headerlink" title="nec(网易) 的reset"></a>nec(网易) 的reset</h3></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/* reset */</span><br><span class="line">html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu&#123;margin:0;padding:0;&#125;</span><br><span class="line">header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details&#123;display:block;&#125;</span><br><span class="line">table&#123;border-collapse:collapse;border-spacing:0;&#125;</span><br><span class="line">caption,th&#123;text-align:left;font-weight:normal;&#125;</span><br><span class="line">html,body,fieldset,img,iframe,abbr&#123;border:0;&#125;</span><br><span class="line">i,cite,em,var,address,dfn&#123;font-style:normal;&#125;</span><br><span class="line">[hidefocus],summary&#123;outline:0;&#125;</span><br><span class="line">li&#123;list-style:none;&#125;</span><br><span class="line">h1,h2,h3,h4,h5,h6,small&#123;font-size:100%;&#125;</span><br><span class="line">sup,sub&#123;font-size:83%;&#125;</span><br><span class="line">pre,code,kbd,samp&#123;font-family:inherit;&#125;</span><br><span class="line">q:before,q:after&#123;content:none;&#125;</span><br><span class="line">textarea&#123;overflow:auto;resize:none;&#125;</span><br><span class="line">label,summary&#123;cursor:default;&#125;</span><br><span class="line">a,button&#123;cursor:pointer;&#125;</span><br><span class="line">h1,h2,h3,h4,h5,h6,em,strong,b&#123;font-weight:bold;&#125;</span><br><span class="line">del,ins,u,s,a,a:hover&#123;text-decoration:none;&#125;</span><br><span class="line">body,textarea,input,button,select,keygen,legend&#123;font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;&#125;</span><br><span class="line">body&#123;background:#fff;&#125;</span><br><span class="line">a,a:hover&#123;color:#333;&#125;</span><br></pre></td></tr></table></figure>
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/html规范/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="XMwarrior">
-        <meta itemprop="description" content="日常积累收录">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小浣熊熊采坑录">
-      </span>
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">Reward</button>
+  <div id="qr" class="qr" style="display: none;">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="WechatPay"/>
+      <span>WechatPay</span>
     </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/13/html规范/" itemprop="url">html规范</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-13T09:54:55+08:00">2018-04-13</time>
-        </span>
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      <hr>
-<h2 id="head"><a href="#head" class="headerlink" title="head"></a>head</h2><p>head基本内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--字符编码：--&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;!--页面标题：--&gt;</span><br><span class="line">&lt;title&gt;青岛乘正科技有限公司&lt;/title&gt;</span><br><span class="line">&lt;!--页面关键词：--&gt;</span><br><span class="line">&lt;meta name=&quot;keywords&quot; content=&quot;&quot;&gt;</span><br><span class="line">&lt;!--页面描述内容：--&gt;</span><br><span class="line">&lt;meta name=&quot;Description&quot; content=&quot;不超过150个字符&quot; /&gt;</span><br><span class="line">&lt;!--移动端及响应式网站：--&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no&quot; /&gt;</span><br><span class="line">&lt;!--favicon 图标：--&gt;</span><br><span class="line">&lt;link rel=&quot;shortcut icon&quot; href=&quot;img/favicon.ico&quot; type=&quot;img/x-icon&quot; /&gt;</span><br><span class="line">&lt;!--bookmark 图标：--&gt;</span><br><span class="line">&lt;link rel=&quot;bookmark&quot; href=&quot;img/favicon.ico&quot; type=&quot;img/x-icon&quot; /&gt;</span><br><span class="line">&lt;!--网页作者：--&gt;</span><br><span class="line">&lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="可以选择加入的标签："><a href="#可以选择加入的标签：" class="headerlink" title="可以选择加入的标签："></a><strong><em>可以选择加入的标签</em></strong>：</h4><ol>
-<li><p>设定网页的到期时间。一旦网页过期，必须到服务器上重新调阅。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;expires&quot; content=&quot;Wed, 26 Feb 1997 08：21：57 GMT&quot;&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>禁止浏览器从本地机的缓存中调阅页面内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>用来防止别人在框架里调用你的页面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>自动跳转(5 指时间停留 5 秒)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;url=http://www.baidu.com&quot;&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong><em>备注</em></strong><br>http缓存机制深入理解推荐文章：</p>
-<ol>
-<li><a href="https://www.cnblogs.com/chenqf/p/6386163.html" target="_blank" rel="noopener">彻底弄懂HTTP缓存机制及原理</a></li>
-<li><a href="https://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">浅谈浏览器http的缓存机制</a></li>
-</ol>
-<h2 id="body"><a href="#body" class="headerlink" title="body"></a>body</h2><ol>
-<li>请不要在网页中连续出现多于一个的空格，也尽量少使用全角空格（英文字符集下，全角空格会变成乱码），空白应该尽量使用 <code>text-indent</code> <code>padding</code> <code>margin</code>实现。</li>
-<li><p>a标签无文字提示时设置title属性，img标签设置alt属性。a标签默认占位符’###’。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;###&quot; title=&quot;给链接文字提示&quot;&gt;&lt;img src=&quot;图片.gif&quot; alt=&quot;给图片提示&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>尽量遵循HTML标准和语义。基本的H5语义标签：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`header` `nav` `section` `artical` `aside` `dialog` `footer`</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>标签属性定义推荐顺序依次为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`id class name data-*`</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>尽量避免多余的父节点、注释节点。例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;!--多余父节点--&gt;</span><br><span class="line">&lt;!--&lt;span&gt;无用注释节点&lt;/span&gt;--&gt;</span><br><span class="line">&lt;div class=&quot;container&quot;&gt;...&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a><strong>补充</strong>：</h3><ul>
-<li>尽量采用外链css样式，避免内部及内联样式。</li>
-<li>script统一放至body标签内最后。（此引用js方式，无需document.ready检测）</li>
-</ul>
+    
+    
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="AliPay"/>
+      <span>AliPay</span>
+    </div>
+    
+    
+  </div>
+</div>
 
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
+
   
-  <article class="index-post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/函数节流/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="XMwarrior">
-        <meta itemprop="description" content="日常积累收录">
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="小浣熊熊采坑录">
-      </span>
+  
+  <div class="post-nav">
+    
+    <div class="post-nav-next post-nav-item">
+      <a href="/2018/04/13/css规范/" rel="next" title="css规范">
+        <i class="fas fa-angle-left"></i>
+        <span class="nav-title">css规范</span>
+      </a>
     </div>
-    <header class="post-header">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/13/函数节流/" itemprop="url">函数节流</a>
-      </h2>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-13T09:15:40+08:00">2018-04-13</time>
-        </span>
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-body" itemprop="articleBody">
-      
-      
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
+    
+    
+  </div>
   
   
 </section>
@@ -558,6 +401,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <p><i class="fas fa-list-ol"></i> Table of Contents</p>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原则"><span class="toc-text">原则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单行注释"><span class="toc-text">单行注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多行注释"><span class="toc-text">多行注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#函数-方法注释"><span class="toc-text">函数/方法注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文件注释"><span class="toc-text">文件注释</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命名语法"><span class="toc-text">命名语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#接口命名规范"><span class="toc-text">接口命名规范</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#True-和-False-布尔表达式"><span class="toc-text">True 和 False 布尔表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不要在-Array-上使用-for-in-循环"><span class="toc-text">不要在 Array 上使用 for-in 循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#条件-三元-操作符"><span class="toc-text">条件(三元)操作符 (?:)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#amp-amp-和"><span class="toc-text">&amp;&amp; 和 ||</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能优化"><span class="toc-text">性能优化</span></a></li></ol></div>
+</div>
+
+
+
     
     
     
