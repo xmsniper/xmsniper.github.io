@@ -42,7 +42,7 @@
     
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/archive.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -78,7 +78,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Archives | 小浣熊熊采坑录 - xmwarrior log</title>
+    <title>客户端模拟浏览量 | 小浣熊熊采坑录 - xmwarrior log</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"  data-spy="scroll" data-target=".list-group">
     
@@ -100,7 +100,7 @@
     
     <li><a href="/">Home</a></li>
     
-    <li><a href="/archives/" class="current">Archives</a></li>
+    <li><a href="/archives/">Archives</a></li>
     
     <li><a href="/categories/">Categories</a></li>
     
@@ -121,67 +121,80 @@
         <div class="main-container">
           <div class="content">
             
-<section id="archive" class="archive">
-  <div class="archive-container">
-    <div class="archive-counter">
+<section id="post" class="post">
+  
+  <article class="post-container card " itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/客户端模拟浏览量/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="XMwarrior">
+       <meta itemprop="description" content="日常积累收录">
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="小浣熊熊采坑录">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+       <span class="">客户端模拟浏览量</span>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i> <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-01T09:55:19+08:00">2018-12-01</time>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-body" itemprop="articleBody">
+      <h4 id="前端模拟浏览量计数"><a href="#前端模拟浏览量计数" class="headerlink" title="前端模拟浏览量计数"></a><strong>前端模拟浏览量计数</strong></h4><p>函数/方法注释必须包含函数说明，有参数和返回值时必须使用注释标识。；<br>参数和返回值注释必须包含类型信息和说明；<br>当函数是内部函数，外部不可访问时，可以使用 <code>@inner</code> 标识；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//前端实现“浏览量造假”</span><br><span class="line">function getViewNumber() &#123;</span><br><span class="line">	var firstDate = new Date(&apos;2018/10/30&apos;).getTime();//服务器上传时间</span><br><span class="line">	var oneDay = 86400000;                           //一天毫秒数</span><br><span class="line">	var nowDate = new Date().getTime();              //客户端时间</span><br><span class="line">	var region = (nowDate - firstDate) / oneDay;     //时间差</span><br><span class="line">	var step = 500;                                  //每天浏览量设定</span><br><span class="line">	var todayView = parseInt(region * step);         //获取当前浏览量</span><br><span class="line">	var view;</span><br><span class="line">	if(localStorage.myViewNumber) &#123;                  //获取客户端刷新页面次数</span><br><span class="line">		localStorage.myViewNumber++;</span><br><span class="line">		view = ~~localStorage.myViewNumber + todayView;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		localStorage.myViewNumber = 1;</span><br><span class="line">		view = ~~localStorage.myViewNumber + todayView;</span><br><span class="line">	&#125;</span><br><span class="line">	return view;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </main>
+    <footer class="post-footer">
       
-      <p>You have 4 posts!</p>
       
+    </footer>
+  </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的鼓励将是我继续前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">Reward</button>
+  <div id="qr" class="qr" style="display: none;">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="WechatPay"/>
+      <span>WechatPay</span>
     </div>
     
     
+    <div id="alipay">
+      <img id="alipay_qr" src="/images/AliPay.png" alt="AliPay"/>
+      <span>AliPay</span>
+    </div>
     
-    
-    <h1 class="archive-title">2018</h1>
-    
-    <article class="archive-post card" itemscope itemtype="http://schema.org/Article">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/12/01/客户端模拟浏览量/" itemprop="url">客户端模拟浏览量</a>
-        
-        <span class="post-date">
-          <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-01T09:55:19+08:00">12-01</time>
-        </span>
-        
-      </h2>
-    </article>
-    
-    
-    <article class="archive-post card" itemscope itemtype="http://schema.org/Article">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/13/js规范/" itemprop="url">js规范</a>
-        
-        <span class="post-date">
-          <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-13T09:55:19+08:00">04-13</time>
-        </span>
-        
-      </h2>
-    </article>
-    
-    
-    <article class="archive-post card" itemscope itemtype="http://schema.org/Article">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/13/css规范/" itemprop="url">css规范</a>
-        
-        <span class="post-date">
-          <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-13T09:55:09+08:00">04-13</time>
-        </span>
-        
-      </h2>
-    </article>
-    
-    
-    <article class="archive-post card" itemscope itemtype="http://schema.org/Article">
-      <h2 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/04/13/html规范/" itemprop="url">html规范</a>
-        
-        <span class="post-date">
-          <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-13T09:54:55+08:00">04-13</time>
-        </span>
-        
-      </h2>
-    </article>
     
   </div>
+</div>
+
+
+  
+  
+  <div class="post-nav">
+    
+    <div class="post-nav-next post-nav-item">
+      <a href="/2018/04/13/js规范/" rel="next" title="js规范">
+        <i class="fas fa-angle-left"></i>
+        <span class="nav-title">js规范</span>
+      </a>
+    </div>
+    
+    
+  </div>
+  
   
 </section>
 
@@ -240,6 +253,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <p><i class="fas fa-list-ol"></i> Table of Contents</p>
+  <div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前端模拟浏览量计数"><span class="toc-text">前端模拟浏览量计数</span></a></li></ol></div>
+</div>
+
+
+
     
     
     
