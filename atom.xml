@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-05T01:43:36.849Z</updated>
+  <updated>2019-02-01T07:15:14.271Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>input-range自定义</title>
+    <link href="http://yoursite.com/2019/02/01/input_range%E8%87%AA%E5%AE%9A%E4%B9%89/"/>
+    <id>http://yoursite.com/2019/02/01/input_range自定义/</id>
+    <published>2019-02-01T07:11:19.000Z</published>
+    <updated>2019-02-01T07:15:14.271Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;input-range自定义样式&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="jquery" scheme="http://yoursite.com/tags/jquery/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>canvas转换svg合成图片</title>
+    <link href="http://yoursite.com/2019/02/01/canvas%E8%BD%AC%E6%8D%A2svg%E5%90%88%E6%88%90%E5%9B%BE%E7%89%87/"/>
+    <id>http://yoursite.com/2019/02/01/canvas转换svg合成图片/</id>
+    <published>2019-02-01T06:18:19.000Z</published>
+    <updated>2019-02-01T06:44:41.186Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;此函数应用场景为：百度地图生成自定义标志&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="jquery" scheme="http://yoursite.com/tags/jquery/"/>
+    
+  </entry>
   
   <entry>
     <title>前端实现懒加载</title>
@@ -36,9 +88,9 @@
     </summary>
     
     
-      <category term="bootstrap" scheme="http://yoursite.com/tags/bootstrap/"/>
-    
       <category term="jquery" scheme="http://yoursite.com/tags/jquery/"/>
+    
+      <category term="bootstrap" scheme="http://yoursite.com/tags/bootstrap/"/>
     
   </entry>
   
@@ -69,7 +121,7 @@
     <link href="http://yoursite.com/2018/04/13/js%E8%A7%84%E8%8C%83/"/>
     <id>http://yoursite.com/2018/04/13/js规范/</id>
     <published>2018-04-13T01:55:19.000Z</published>
-    <updated>2018-04-13T02:02:44.361Z</updated>
+    <updated>2018-04-13T02:02:44.362Z</updated>
     
     <summary type="html">
     
@@ -91,7 +143,7 @@
     <link href="http://yoursite.com/2018/04/13/css%E8%A7%84%E8%8C%83/"/>
     <id>http://yoursite.com/2018/04/13/css规范/</id>
     <published>2018-04-13T01:55:09.000Z</published>
-    <updated>2018-04-13T02:02:13.167Z</updated>
+    <updated>2018-04-13T02:02:13.168Z</updated>
     
     <summary type="html">
     
@@ -114,7 +166,7 @@
     <link href="http://yoursite.com/2018/04/13/html%E8%A7%84%E8%8C%83/"/>
     <id>http://yoursite.com/2018/04/13/html规范/</id>
     <published>2018-04-13T01:54:55.000Z</published>
-    <updated>2018-04-13T02:07:40.487Z</updated>
+    <updated>2018-04-13T02:07:40.488Z</updated>
     
     <summary type="html">
     
