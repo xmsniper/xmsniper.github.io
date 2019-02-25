@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-19T07:21:26.623Z</updated>
+  <updated>2019-02-25T01:28:09.955Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>title美化提示框</title>
+    <link href="http://yoursite.com/2019/02/25/title%E7%BE%8E%E5%8C%96%E6%8F%90%E7%A4%BA%E6%A1%86/"/>
+    <id>http://yoursite.com/2019/02/25/title美化提示框/</id>
+    <published>2019-02-25T07:16:19.000Z</published>
+    <updated>2019-02-25T01:28:09.955Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;title美化提示框：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="jquery" scheme="http://yoursite.com/tags/jquery/"/>
+    
+  </entry>
   
   <entry>
     <title>js运算精度_decimal插件</title>
