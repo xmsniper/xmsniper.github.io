@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>bootstrap-Modal组件封装</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style type="text/css">
+			button:focus {
+				outline: none;
+			}
+			/*loading-line-spin样式*/
+			
+			.loaders .loader {
+				box-sizing: border-box;
+				display: flex;
+				flex: 0 1 auto;
+				flex-direction: column;
+				flex-grow: 1;
+				flex-shrink: 0;
+				flex-basis: 25%;
+				max-width: 25%;
+				height: 200px;
+				align-items: center;
+				justify-content: center
+			}
+			
+			.line-spin-fade-loader {
+				position: relative
+			}
+			
+			@-webkit-keyframes line-spin-fade-loader {
+				50% {
+					opacity: .3
+				}
+				100% {
+					opacity: 1
+				}
+			}
+			
+			@keyframes line-spin-fade-loader {
+				50% {
+					opacity: .3
+				}
+				100% {
+					opacity: 1
+				}
+			}
+			
+			.line-spin-fade-loader {
+				position: relative
+			}
+			
+			.line-spin-fade-loader>div:nth-child(1) {
+				top: 20px;
+				left: 0;
+				-webkit-animation: line-spin-fade-loader 1.2s .12s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .12s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(2) {
+				top: 13.63636px;
+				left: 13.63636px;
+				-webkit-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .24s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .24s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(3) {
+				top: 0;
+				left: 20px;
+				-webkit-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				transform: rotate(90deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .36s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .36s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(4) {
+				top: -13.63636px;
+				left: 13.63636px;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .48s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .48s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(5) {
+				top: -20px;
+				left: 0;
+				-webkit-animation: line-spin-fade-loader 1.2s .6s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .6s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(6) {
+				top: -13.63636px;
+				left: -13.63636px;
+				-webkit-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .72s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .72s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(7) {
+				top: 0;
+				left: -20px;
+				-webkit-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				transform: rotate(90deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .84s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .84s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div:nth-child(8) {
+				top: 13.63636px;
+				left: -13.63636px;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-animation: line-spin-fade-loader 1.2s .96s infinite ease-in-out;
+				animation: line-spin-fade-loader 1.2s .96s infinite ease-in-out
+			}
+			
+			.line-spin-fade-loader>div {
+				background-color: #E9E9E9;
+				width: 4px;
+				height: 35px;
+				border-radius: 2px;
+				margin: 2px;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+				position: absolute;
+				width: 5px;
+				height: 15px
+			}
+		</style>
+	</head>
+
+	<body>
+		<button id="openModel">打开弹窗</button>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			(function() {
+				$.extend({
+					xmDialog: {
+						init: function(option) {
+							var that = this;
+							var base = {
+								el: '#xmCustomModal',
+								styles: {
+									'z-index': 10000
+								},
+								classes: '',
+								modalHeader: {
+									title: option.title || '',
+									styles: {
+
+									}
+								},
+								modalBody: {
+									content: option.content || '',
+									styles: '',
+									loading: '<div id="spinLoading" class="bg-white w-100 h-100 position-absolute row align-items-center justify-content-center m-0 spin-loading" style="top:0;left:0;"><div class="loader"><div class="loader-inner line-spin-fade-loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div></div>',
+								},
+								modalFooter: {
+									show: true,
+									styles: {
+										'justify-content': 'center'
+									},
+									type: 'confim',
+									buttons: {
+										'confim': [{
+											type: 'ok',
+											classes: 'btn-primary',
+											text: '确认',
+											fn: function() {
+												option.ok && option.ok(that);
+											}
+										}, {
+											type: 'cancel',
+											classes: 'btn-secondary',
+											text: '取消',
+											fn: function() {
+												option.cancel && option.cancel(that);
+											}
+										}],
+										'tip': [{
+											type: 'tip',
+											classes: 'btn-warning',
+											text: '我知道了',
+											fn: function() {
+												option.confim && option.confim(that);
+											}
+										}]
+									}
+								},
+								formatStyle: function(obj) {
+									if($.isEmptyObject(obj)) {
+										return '';
+									} else {
+										var res = [];
+										for(var key in obj) {
+											res.push(key + ':' + obj[key]);
+										}
+										return res.join(';');
+									}
+								},
+								shown: function() {
+									option.shown && option.shown(that);
+								},
+								hidden: function() {
+									option.hidden && option.hidden(that);
+								}
+							};
+							if(!$(base.el).length) {
+								$('body').append('<div id="' + base.el.substring(1) + '" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static"></div>');
+							}
+							that.$el = $(base.el);
+							var templete = [];
+							if(base.style) {
+								that.$el.attr('style', base.style);
+							}
+							templete.push('<div class="modal-dialog modal-dialog-centered" role="document" class="' + base.classes + '" style="' + base.formatStyle(base.styles) + '">');
+							templete.push('    <div class="modal-content">');
+							templete.push('        <div class="modal-header border-0 py-2" style="' + base.formatStyle(base.modalHeader.styles) + '">');
+							templete.push('            <h5 class="modal-title pr-3 text-nowrap overflow-hidden" style="text-overflow:ellipsis;">' + base.modalHeader.title + '</h5>');
+							templete.push('            <button type="button" class="close" style="margin:-0.5rem -1rem;padding:0.5rem 0.75rem;" data-dismiss="modal" aria-label="Close">');
+							templete.push('                <span aria-hidden="true">&times;</span>');
+							templete.push('            </button>');
+							templete.push('        </div>');
+							templete.push('        <div class="modalBody modal-body relative" style="' + base.formatStyle(base.modalBody.styles) + '">');
+							templete.push('            <!--提示内容-->');
+							templete.push(base.modalBody.content + base.modalBody.loading);
+							templete.push('        </div>');
+							if(base.modalFooter.show) {
+								templete.push('    <div class="modal-footer border-0" style="' + base.formatStyle(base.modalFooter.styles) + '">');
+								base.modalFooter.buttons[base.modalFooter.type].forEach(function(item, index) {
+									$['xmCustomModal' + index] = item.fn;
+									templete.push('    <button type="button" class="btn ' + item.classes + ' px-4" onclick="' + '$.xmCustomModal' + index + '();">' + item.text + '</button>');
+								});
+								templete.push('    </div>');
+							}
+							templete.push('    </div>');
+							templete.push('</div>');
+							that.$el.html(templete.join(''));
+							that.$el.off('hidden.bs.modal').on('hidden.bs.modal', function() {
+								base.hidden && base.hidden(this);
+							});
+							that.$el.off('shown.bs.modal').on('shown.bs.modal', function() {
+								base.shown && base.shown(that);
+							});
+							that.$el.modal('show');
+							return this;
+						},
+						hideLoading: function() {
+							$('#spinLoading').hide();
+							return this;
+						}
+					}
+				});
+
+			})();
+			$('#openModel').on('click', function() {
+				//调用方式
+				$.xmDialog.init({
+					title: '可选项：标题',
+					content: '<div>内容</div><div>自定义</div><div>标签样式</div><div>可与其他插件组合使用</div>',
+					//确定
+					ok: function(that) {
+						console.log('ok');
+						that.$el.modal('hide');
+					},
+					//取消
+					cancel: function(that) {
+						console.log('cancel');
+						that.$el.modal('hide');
+					},
+					//确认
+					confim: function(that) {
+						console.log('confirm');
+						that.$el.modal('hide');
+					},
+					//显示
+					shown: function(that) {
+						console.log('shown');
+						that.hideLoading();
+						//如与异步组建配合使用，你将用到loading遮罩
+						//setTimeout(function() {
+						//	that.hideLoading();
+						//}, 2000)
+					},
+					//隐藏
+					hidden: function() {
+						console.log('hidden');
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>

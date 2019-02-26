@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-25T01:28:09.955Z</updated>
+  <updated>2019-02-26T06:54:37.219Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bootstrap-Modal组件封装</title>
+    <link href="http://yoursite.com/2019/02/26/bootstrap-Modal%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/"/>
+    <id>http://yoursite.com/2019/02/26/bootstrap-Modal组件封装/</id>
+    <published>2019-02-26T07:16:19.000Z</published>
+    <updated>2019-02-26T06:54:37.219Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;bootstrap-Modal组件封装：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="jquery" scheme="http://yoursite.com/tags/jquery/"/>
+    
+      <category term="bootstrap" scheme="http://yoursite.com/tags/bootstrap/"/>
+    
+  </entry>
   
   <entry>
     <title>title美化提示框</title>
