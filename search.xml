@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>网页防扒</title>
+      <link href="/2019/03/06/%E7%BD%91%E9%A1%B5%E9%98%B2%E6%89%92/"/>
+      <url>/2019/03/06/%E7%BD%91%E9%A1%B5%E9%98%B2%E6%89%92/</url>
+      <content type="html"><![CDATA[<p>所谓防火防盗防大佬，虽然我们提倡开源，但是有时也会用到“网页防扒”，在<a href="https://www.sojson.com被挡了一会感觉很蓝瘦，顺便研究了下如何“防扒”，代码如下：" target="_blank" rel="noopener">https://www.sojson.com被挡了一会感觉很蓝瘦，顺便研究了下如何“防扒”，代码如下：</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">document.onkeydown=function()&#123;</span><br><span class="line">    var e=window.event||arguments[0];</span><br><span class="line">    if(e.keyCode==123)&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;else if((e.ctrlKey)&amp;&amp;(e.shiftKey)&amp;&amp;(e.keyCode==73))&#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">document.oncontextmenu=function()&#123;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>示例：<a href="/pages/网页防扒.html">请点这里</a></p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>bootstrap-Modal组件封装</title>
       <link href="/2019/02/26/bootstrap-Modal%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/"/>
       <url>/2019/02/26/bootstrap-Modal%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/</url>
