@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>相邻算法</title>
+      <link href="/2019/03/11/%E7%9B%B8%E9%82%BB%E7%AE%97%E6%B3%95/"/>
+      <url>/2019/03/11/%E7%9B%B8%E9%82%BB%E7%AE%97%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>参照“猫眼电影”购票选座规则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 影院选座验证</span><br><span class="line">* param &#123;Array&#125; arr</span><br><span class="line">* param &#123;Object&#125; options.ok验证成功回调函数，options.cancel验证失败回调函数</span><br><span class="line">* return &#123;Boolean&#125; 验证成功返回true,失败返回false</span><br><span class="line">*/</span><br><span class="line">function getAdjacentItem(arr,options) &#123;</span><br><span class="line">var arrLength=arr.length;</span><br><span class="line">var nextItems=[];</span><br><span class="line">if(!arrLength)&#123;return false;&#125;</span><br><span class="line">if(arrLength===1)&#123;options.ok&amp;&amp;options.ok(arr);return true;&#125;</span><br><span class="line">arr.sort(function(a,b)&#123;</span><br><span class="line">if(a.y===b.y&amp;&amp;Math.abs(a.x-b.x)===1)&#123;</span><br><span class="line">nextItems.push(&#123;</span><br><span class="line">a:a,</span><br><span class="line">b:b</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line">return a.y-b.y;</span><br><span class="line">&#125;);</span><br><span class="line">if(arrLength%2)&#123;</span><br><span class="line">if(Math.floor(arrLength/2)===nextItems.length)&#123;</span><br><span class="line">options.ok&amp;&amp;options.ok(arr);</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">if(arrLength/2===nextItems.length)&#123;</span><br><span class="line">options.ok&amp;&amp;options.ok(arr);</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">options.cancel&amp;&amp;options.cancel(arr);</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>示例：<a href="/pages/相邻算法.html">请点这里</a></p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>网页防扒</title>
       <link href="/2019/03/06/%E7%BD%91%E9%A1%B5%E9%98%B2%E6%89%92/"/>
       <url>/2019/03/06/%E7%BD%91%E9%A1%B5%E9%98%B2%E6%89%92/</url>
