@@ -168,6 +168,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-客户端模拟浏览量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/01/客户端模拟浏览量/">客户端模拟浏览量</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/01/客户端模拟浏览量/" class="archive-article-date">
+  	<time datetime="2018-12-01T01:55:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="前端模拟浏览量计数"><a href="#前端模拟浏览量计数" class="headerlink" title="前端模拟浏览量计数"></a><strong>前端模拟浏览量计数</strong></h4><p>函数/方法注释必须包含函数说明，有参数和返回值时必须使用注释标识。；<br>参数和返回值注释必须包含类型信息和说明；<br>当函数是内部函数，外部不可访问时，可以使用 <code>@inner</code> 标识；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//前端实现“浏览量造假”</span><br><span class="line">function getViewNumber() &#123;</span><br><span class="line">	var firstDate = new Date(&apos;2018/10/30&apos;).getTime();//服务器上传时间</span><br><span class="line">	var oneDay = 86400000;                           //一天毫秒数</span><br><span class="line">	var nowDate = new Date().getTime();              //客户端时间</span><br><span class="line">	var region = (nowDate - firstDate) / oneDay;     //时间差</span><br><span class="line">	var step = 500;                                  //每天浏览量设定</span><br><span class="line">	var todayView = parseInt(region * step);         //获取当前浏览量</span><br><span class="line">	var view;</span><br><span class="line">	if(localStorage.myViewNumber) &#123;                  //获取客户端刷新页面次数</span><br><span class="line">		localStorage.myViewNumber++;</span><br><span class="line">		view = ~~localStorage.myViewNumber + todayView;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		localStorage.myViewNumber = 1;</span><br><span class="line">		view = ~~localStorage.myViewNumber + todayView;</span><br><span class="line">	&#125;</span><br><span class="line">	return view;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/01/客户端模拟浏览量/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js规范" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
