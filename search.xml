@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>position-sticky</title>
+      <link href="/2019/03/14/position-sticky/"/>
+      <url>/2019/03/14/position-sticky/</url>
+      <content type="html"><![CDATA[<h2 id="position-sticky简介"><a href="#position-sticky简介" class="headerlink" title="position:sticky简介"></a>position:sticky简介</h2><p>单词sticky的中文意思是“粘性的”，position:sticky表现也符合这个粘性的表现。<br>基本上，可以看出是position:relative和position:fixed的结合体——当元素在屏幕内，表现为relative，就要滚出显示器屏幕的时候，表现为fixed。<br>你可以点击 <a href="/pages/position-sticky.html">此处</a> 感受一下。</p><p>不过应用此属性需要注意html布局配合，以下是css样式及html结构，具体体会你将在使用时，切身体会到：</p><p><strong>css</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">h4 &#123;</span><br><span class="line">position: sticky;</span><br><span class="line">z-index: 1;</span><br><span class="line">top: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div &#123;</span><br><span class="line">position: relative;</span><br><span class="line">background-color: #7FDBFF;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">span &#123;</span><br><span class="line">display: block;</span><br><span class="line">position: sticky;</span><br><span class="line">bottom: 50%;</span><br><span class="line">z-index: -1;</span><br><span class="line">background: #2ECC40;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>html</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;</span><br><span class="line">&lt;h4&gt;我是标题1&lt;/h4&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;p&gt;我是内容......&lt;/p&gt;</span><br><span class="line">&lt;p&gt;我是内容......&lt;/p&gt;</span><br><span class="line">&lt;p&gt;我是内容......&lt;/p&gt;</span><br><span class="line">&lt;p&gt;我是内容......&lt;/p&gt;</span><br><span class="line">&lt;p&gt;我是内容......&lt;/p&gt;</span><br><span class="line">&lt;p&gt;我是内容......&lt;/p&gt;</span><br><span class="line">&lt;p&gt;我是内容......&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;span&gt;我是footer&lt;/span&gt;</span><br><span class="line">&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p><p>示例：<a href="/pages/position-sticky.html">请点这里</a></p>]]></content>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+            <tag> css3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>css变量</title>
       <link href="/2019/03/13/css%E5%8F%98%E9%87%8F/"/>
       <url>/2019/03/13/css%E5%8F%98%E9%87%8F/</url>
