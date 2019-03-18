@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-14T08:29:13.190Z</updated>
+  <updated>2019-03-18T09:47:59.557Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>色调旋转滤镜按钮-在线生成</title>
+    <link href="http://yoursite.com/2019/03/18/%E8%89%B2%E8%B0%83%E6%97%8B%E8%BD%AC%E6%BB%A4%E9%95%9C%E6%8C%89%E9%92%AE-%E5%9C%A8%E7%BA%BF%E7%94%9F%E6%88%90/"/>
+    <id>http://yoursite.com/2019/03/18/色调旋转滤镜按钮-在线生成/</id>
+    <published>2019-03-18T09:41:00.000Z</published>
+    <updated>2019-03-18T09:47:59.557Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本例应用颜色拾取插件 &lt;a href=&quot;https://farbelous.io/bootstrap-colorpicker/tutorial-Basics.html&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="jquery" scheme="http://yoursite.com/tags/jquery/"/>
+    
+      <category term="bootstrap" scheme="http://yoursite.com/tags/bootstrap/"/>
+    
+      <category term="css3" scheme="http://yoursite.com/tags/css3/"/>
+    
+      <category term="colorpicker" scheme="http://yoursite.com/tags/colorpicker/"/>
+    
+  </entry>
   
   <entry>
     <title>百度分享-设置缩略图及标题</title>
