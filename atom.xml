@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-18T09:47:59.557Z</updated>
+  <updated>2019-03-27T06:36:02.798Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>清除cookie稳妥做法</title>
+    <link href="http://yoursite.com/2019/03/27/%E6%B8%85%E9%99%A4cookie%E7%A8%B3%E5%A6%A5%E5%81%9A%E6%B3%95/"/>
+    <id>http://yoursite.com/2019/03/27/清除cookie稳妥做法/</id>
+    <published>2019-03-27T06:16:00.000Z</published>
+    <updated>2019-03-27T06:36:02.798Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;清除cookie稳妥做法就是设置cookie与清除cookie写法一致，cookie清除不了的问题，主要出现在设置与清除cookie并非一端操作的情况下，此时需要注意path、domain的设置必须保持一致，注意下文中注释&lt;code&gt;//warning&lt;/code&gt;处代码，
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>色调旋转滤镜按钮-在线生成</title>
