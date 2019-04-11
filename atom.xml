@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-03T01:06:55.966Z</updated>
+  <updated>2019-04-11T01:50:27.089Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>天气插件改造之Free初探</title>
+    <link href="http://yoursite.com/2019/04/11/%E5%A4%A9%E6%B0%94%E6%8F%92%E4%BB%B6xm-weather/"/>
+    <id>http://yoursite.com/2019/04/11/天气插件xm-weather/</id>
+    <published>2019-04-11T11:18:19.000Z</published>
+    <updated>2019-04-11T01:50:27.089Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;此处不宜多说（露出一个高深莫测的微笑！），精华自取：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="jquery" scheme="http://yoursite.com/tags/jquery/"/>
+    
+  </entry>
   
   <entry>
     <title>高阶函数缓存应用之斐波那契数列</title>

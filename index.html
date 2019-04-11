@@ -168,6 +168,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-天气插件xm-weather" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/11/天气插件xm-weather/">天气插件改造之Free初探</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/11/天气插件xm-weather/" class="archive-article-date">
+  	<time datetime="2019-04-11T11:18:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此处不宜多说（露出一个高深莫测的微笑！），精华自取：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line">(function(window, document, scriptName, wigetname, url,jsonurl, scriptNode, originalNode) &#123;</span><br><span class="line">	$.extend(&#123;</span><br><span class="line">		smartDefaultOption: &#123;</span><br><span class="line">			&quot;flavor&quot;: &quot;bubble&quot;, //样式选择：bubble浮动气泡，slim固定极简</span><br><span class="line">			&quot;positionMode&quot;: &quot;static&quot;,//浮动气泡所需属性：默认fixed</span><br><span class="line">			&quot;location&quot;: [</span><br><span class="line">				&quot;北京市&quot;,</span><br><span class="line">				&quot;54511&quot;,</span><br><span class="line">				&quot;110101&quot;,</span><br><span class="line">				&quot;101010100&quot;</span><br><span class="line">			],</span><br><span class="line">			&quot;geolocation&quot;: &quot;disabled&quot;, //城市定位：enabled启用，disabled不启用。 默认免费版不能开启定位</span><br><span class="line">			&quot;theme&quot;: &quot;chameleon&quot;, //浮层背景：chameleon随天气变化，white白色，black黑色</span><br><span class="line">			&quot;container&quot;: &quot;wp-container&quot;, //dom元素id开头</span><br><span class="line">			&quot;color&quot;: &quot;#FFFFFF&quot;, //字体颜色</span><br><span class="line">			&quot;background&quot;: &quot;#C6C6C6&quot;, //背景色：不需要设置时删掉此属性</span><br><span class="line">			&quot;bubble&quot;: &quot;disabled&quot;, //slim模式下：启用浮层显示天气详情和预报：enabled启用，disabled不启用。</span><br><span class="line">			&quot;uuid&quot;: &quot;b93a5df5-4925-42a9-a202-5564d7495237&quot;, //下面这两项时4Dsmart网站的账号的id、hash</span><br><span class="line">			&quot;hash&quot;: &quot;F494D79972E3122A99CA36C4BC8A9713&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		//封装同步ajax</span><br><span class="line">		getAsyncData: function(url, data, datatype) &#123;</span><br><span class="line">			var res = &apos;&apos;;</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">				url: url,</span><br><span class="line">				data: data,</span><br><span class="line">				type: &quot;get&quot;,</span><br><span class="line">				dataType: datatype || &quot;json&quot;,</span><br><span class="line">				async: false, //同步请求</span><br><span class="line">				timeout: 30000,</span><br><span class="line">				error: function(e) &#123;</span><br><span class="line">					res = e.responseText;</span><br><span class="line">				&#125;,</span><br><span class="line">				success: function(r) &#123;</span><br><span class="line">					res = r;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			return res;</span><br><span class="line">		&#125;,</span><br><span class="line">		/*调用百度API获取“城市中心经纬度” </span><br><span class="line">		 * return lat,lng</span><br><span class="line">		 */</span><br><span class="line">		getLocation: function(fn) &#123;</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">				url: &quot;http://api.map.baidu.com/location/ip?ak=0V85NTruj3YuZa44xCiOP3MqiokuqoWr&amp;coor=bd09ll&quot;,</span><br><span class="line">				type: &quot;POST&quot;,</span><br><span class="line">				dataType: &quot;jsonp&quot;,</span><br><span class="line">				success: function(data) &#123;</span><br><span class="line">					//console.log(data);</span><br><span class="line">					var cityLocation = data.content.point.y + &apos;,&apos; + data.content.point.x;</span><br><span class="line">					fn &amp;&amp; fn(cityLocation);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;,</span><br><span class="line">		/*调用百度API根据经纬度反查“城市名、区号”，根据城市名查询“城市气象台号、天气城市编号”</span><br><span class="line">		 * return &quot;城市名、城市气象台号、区号、天气城市编号&quot;</span><br><span class="line">		 */</span><br><span class="line">		getDirectName: function(cityLocation, fn) &#123;</span><br><span class="line">			$.ajax(&#123;</span><br><span class="line">				url: &apos;http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=&apos; + cityLocation + &apos;&amp;output=json&amp;pois=1&amp;latest_admin=1&amp;ak=0V85NTruj3YuZa44xCiOP3MqiokuqoWr&apos;,</span><br><span class="line">				type: &quot;get&quot;,</span><br><span class="line">				async: true,</span><br><span class="line">				dataType: &quot;jsonp&quot;,</span><br><span class="line">				success: function(res) &#123;</span><br><span class="line">					//console.log(res);</span><br><span class="line">					var cityName = res.result.addressComponent.city.replace(&apos;市&apos;, &apos;&apos;);</span><br><span class="line">					var cityObservatoryCode = $.getAsyncData(jsonurl)[&apos;observatory&apos;][cityName];</span><br><span class="line">					var directAreaCode = res.result.addressComponent.adcode;</span><br><span class="line">					var cityWeatherCode = $.getAsyncData(jsonurl)[&apos;weathercity&apos;][cityName];</span><br><span class="line">					//console.log(&apos;城市名：&apos;+cityName+&apos;\n&apos;,&apos;城市气象台号：&apos;+cityObservatoryCode+&apos;\n&apos;,&apos;区号：&apos;+directAreaCode+&apos;\n&apos;,&apos;天气城市编号：&apos;+cityWeatherCode);</span><br><span class="line">					fn &amp;&amp; fn(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;,</span><br><span class="line">		//根据城市名、城市气象台号、区号、天气城市编号，调用smart-weather查询天气</span><br><span class="line">		getWeather: function(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode) &#123;</span><br><span class="line">			//smart-weather天气具体参数配置</span><br><span class="line">			var data = $.smartDefaultOption;</span><br><span class="line">			data.location = [</span><br><span class="line">				cityName,</span><br><span class="line">				cityObservatoryCode,</span><br><span class="line">				directAreaCode,</span><br><span class="line">				cityWeatherCode</span><br><span class="line">			];</span><br><span class="line">			wp(&quot;init&quot;, data);</span><br><span class="line">			wp(&quot;show&quot;);</span><br><span class="line">		&#125;,</span><br><span class="line">		//封装完的基于4Dsmart的免费获取天气方法</span><br><span class="line">		getFreeWeather: function(data) &#123;</span><br><span class="line">			if(data&amp;&amp;!$.isEmptyObject(data))&#123;</span><br><span class="line">				for (var key in data) &#123;</span><br><span class="line">					$.smartDefaultOption[key]=data[key];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;;</span><br><span class="line">			$.getLocation(function(cityLocation) &#123;</span><br><span class="line">				$.getDirectName(cityLocation, function(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode) &#123;</span><br><span class="line">					$.getWeather(cityName, cityObservatoryCode, directAreaCode, cityWeatherCode);</span><br><span class="line">				&#125;);</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	//天气插件依赖</span><br><span class="line">	initScript = function() &#123;</span><br><span class="line">		scriptNode = document.createElement(&quot;script&quot;);</span><br><span class="line">		originalNode = document.getElementsByTagName(&quot;script&quot;)[0];</span><br><span class="line">		scriptNode.src = url;</span><br><span class="line">		scriptNode.async = 1;</span><br><span class="line">		originalNode.parentNode.insertBefore(scriptNode, originalNode)</span><br><span class="line">	&#125;;</span><br><span class="line">	window[&quot;wpObjectName&quot;] = &quot;wp&quot;;</span><br><span class="line">	window[&quot;wp&quot;] || (window[&quot;wp&quot;] = function() &#123;</span><br><span class="line">		(window[&quot;wp&quot;].arg = window[&quot;wp&quot;].arg || []).push(arguments)</span><br><span class="line">	&#125;);</span><br><span class="line">	window[&quot;wp&quot;].l = +new Date();</span><br><span class="line">	if(window.attachEvent) &#123;</span><br><span class="line">		window.attachEvent(&quot;onload&quot;, initScript)</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		window.addEventListener(&quot;load&quot;, initScript, false)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;(window, document, &quot;script&quot;, &quot;wp&quot;, &quot;js/smart-weather.js&quot;,&quot;js/weather-city.json&quot;));</span><br></pre></td></tr></table></figure></p>
+<p>参考文档：<br><a href="http://www.4dsmart.cn/weatherEnvironmental/plugin.action" target="_blank" rel="noopener">四维智城数据</a><br><a href="http://lbsyun.baidu.com/" target="_blank" rel="noopener">百度开放平台</a><br>示例：<a href="/pages/天气插件xm-weather/index.html">请点这里</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jquery</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/11/天气插件xm-weather/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-高阶函数缓存应用之斐波那契数列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -864,85 +943,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/06/网页防扒/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bootstrap-Modal组件封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/26/bootstrap-Modal组件封装/">bootstrap-Modal组件封装</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/26/bootstrap-Modal组件封装/" class="archive-article-date">
-  	<time datetime="2019-02-26T07:16:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>bootstrap-Modal组件封装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">(function() &#123;</span><br><span class="line">	$.extend(&#123;</span><br><span class="line">		xmDialog: &#123;</span><br><span class="line">		init: function(option) &#123;</span><br><span class="line">			var that = this;</span><br><span class="line">			var base = &#123;</span><br><span class="line">				el: &apos;#xmCustomModal&apos;,</span><br><span class="line">				classes: option.classes || &apos;modal-sm&apos;,</span><br><span class="line">				zIndex:option.zIndex||10000,</span><br><span class="line">				styles: option.styles || &#123;&#125;,//临时没用到</span><br><span class="line">				modalHeader: &#123;</span><br><span class="line">					title: option.title || &apos;&apos;,</span><br><span class="line">					styles: option.headerStyles||&#123;&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				modalBody: &#123;</span><br><span class="line">					content: option.content || &apos;&apos;,</span><br><span class="line">					styles: option.bodyStyles || &#123;&#125;,</span><br><span class="line">					loading: &apos;&lt;div id=&quot;spinLoading&quot; class=&quot;bg-white w-100 h-100 position-absolute row align-items-center justify-content-center m-0 spin-loading&quot; style=&quot;top:0;left:0;&quot;&gt;&lt;div class=&quot;loader&quot;&gt;&lt;div class=&quot;loader-inner line-spin-fade-loader&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&apos;,</span><br><span class="line">				&#125;,</span><br><span class="line">				modalFooter: &#123;</span><br><span class="line">					show: typeof option.showFooter === &apos;boolean&apos; ? option.showFooter : true,</span><br><span class="line">					styles: &#123;</span><br><span class="line">						&apos;justify-content&apos;: option.footerAlign||&apos;center&apos;</span><br><span class="line">					&#125;,</span><br><span class="line">					type: option.type || &apos;confirm&apos;,</span><br><span class="line">					buttons: &#123;</span><br><span class="line">						&apos;confirm&apos;: [&#123;</span><br><span class="line">							type: &apos;ok&apos;,</span><br><span class="line">							classes: &apos;btn-primary&apos;,</span><br><span class="line">							text: option.okText || &apos;确认&apos;,</span><br><span class="line">							fn: function() &#123;</span><br><span class="line">								option.ok ? option.ok(that) : that.$el.modal(&apos;hide&apos;);</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;, &#123;</span><br><span class="line">							type: &apos;cancel&apos;,</span><br><span class="line">							classes: &apos;btn-secondary&apos;,</span><br><span class="line">							text: &apos;取消&apos;,</span><br><span class="line">							fn: function() &#123;</span><br><span class="line">								option.cancel ? option.cancel(that) : that.$el.modal(&apos;hide&apos;);</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;],</span><br><span class="line">						&apos;tip&apos;: [&#123;</span><br><span class="line">							type: &apos;tip&apos;,</span><br><span class="line">							classes: &apos;btn-info&apos;,</span><br><span class="line">							text: &apos;我知道了&apos;,</span><br><span class="line">							fn: function() &#123;</span><br><span class="line">								option.confirm ? option.confirm(that) : that.$el.modal(&apos;hide&apos;);</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;]</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				formatStyle: function(obj) &#123;</span><br><span class="line">					if(!obj || $.isEmptyObject(obj)) &#123;</span><br><span class="line">						return &apos;&apos;;</span><br><span class="line">					&#125; else &#123;</span><br><span class="line">						var res = [];</span><br><span class="line">						for(var key in obj) &#123;</span><br><span class="line">							res.push(key + &apos;:&apos; + obj[key]);</span><br><span class="line">						&#125;</span><br><span class="line">						return res.join(&apos;;&apos;);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				shown: function() &#123;</span><br><span class="line">					option.shown ? option.shown(that) : that.hideLoading();</span><br><span class="line">				&#125;,</span><br><span class="line">				hidden: function() &#123;</span><br><span class="line">					option.hidden &amp;&amp; option.hidden(that);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;;</span><br><span class="line">			if(!$(base.el).length) &#123;</span><br><span class="line">				$(&apos;body&apos;).append(&apos;&lt;div id=&quot;&apos; + base.el.substring(1) + &apos;&quot; class=&quot;modal fade&quot; style=&quot;z-index:10000;&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalCenterTitle&quot; aria-hidden=&quot;true&quot; data-backdrop=&quot;static&quot;&gt;&lt;/div&gt;&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			that.$el = $(base.el);</span><br><span class="line">			var templete = [];</span><br><span class="line">			if(base.style) &#123;</span><br><span class="line">				that.$el.attr(&apos;style&apos;, base.style);</span><br><span class="line">			&#125;</span><br><span class="line">			templete.push(&apos;&lt;div class=&quot;modal-dialog modal-dialog-centered modal-dialog-scrollable &apos; + base.classes + &apos;&quot; role=&quot;document&quot; style=&quot;&apos; + base.formatStyle(base.styles) + &apos;&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;    &lt;div class=&quot;modal-content&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;        &lt;div class=&quot;modal-header border-0 py-2&quot; style=&quot;&apos; + base.formatStyle(base.modalHeader.styles) + &apos;&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;            &lt;h5 class=&quot;modal-title pr-3 text-nowrap overflow-hidden&quot; style=&quot;text-overflow:ellipsis;&quot;&gt;&apos; + base.modalHeader.title + &apos;&lt;/h5&gt;&apos;);</span><br><span class="line">			templete.push(&apos;            &lt;button type=&quot;button&quot; class=&quot;close&quot; style=&quot;margin:-0.5rem -1rem;padding:0.5rem 0.75rem;&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;                &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&apos;);</span><br><span class="line">			templete.push(&apos;            &lt;/button&gt;&apos;);</span><br><span class="line">			templete.push(&apos;        &lt;/div&gt;&apos;);</span><br><span class="line">			templete.push(&apos;        &lt;div class=&quot;modalBody modal-body relative&quot; style=&quot;&apos; + base.formatStyle(base.modalBody.styles) + &apos;&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;            &lt;!--提示内容--&gt;&apos;);</span><br><span class="line">			templete.push(base.modalBody.content + base.modalBody.loading);</span><br><span class="line">			templete.push(&apos;        &lt;/div&gt;&apos;);</span><br><span class="line">			if(base.modalFooter.show) &#123;</span><br><span class="line">				templete.push(&apos;    &lt;div class=&quot;modal-footer border-0&quot; style=&quot;&apos; + base.formatStyle(base.modalFooter.styles) + &apos;&quot;&gt;&apos;);</span><br><span class="line">				base.modalFooter.buttons[base.modalFooter.type].forEach(function(item, index) &#123;</span><br><span class="line">					$[&apos;xmCustomModal&apos; + index] = item.fn;</span><br><span class="line">					templete.push(&apos;    &lt;button type=&quot;button&quot; class=&quot;btn &apos; + item.classes + &apos; px-4&quot; onclick=&quot;&apos; + &apos;$.xmCustomModal&apos; + index + &apos;();&quot;&gt;&apos; + item.text + &apos;&lt;/button&gt;&apos;);</span><br><span class="line">				&#125;);</span><br><span class="line">				templete.push(&apos;    &lt;/div&gt;&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			templete.push(&apos;    &lt;/div&gt;&apos;);</span><br><span class="line">			templete.push(&apos;&lt;/div&gt;&apos;);</span><br><span class="line">			that.$el.html(templete.join(&apos;&apos;));</span><br><span class="line">			that.$el.off(&apos;hidden.bs.modal&apos;).on(&apos;hidden.bs.modal&apos;, function() &#123;</span><br><span class="line">				base.hidden &amp;&amp; base.hidden(this);</span><br><span class="line">			&#125;);</span><br><span class="line">			that.$el.off(&apos;shown.bs.modal&apos;).on(&apos;shown.bs.modal&apos;, function() &#123;</span><br><span class="line">				base.shown &amp;&amp; base.shown(that);</span><br><span class="line">			&#125;);</span><br><span class="line">			that.$el.modal(&apos;show&apos;);</span><br><span class="line">			return this;</span><br><span class="line">		&#125;,</span><br><span class="line">		hideLoading: function() &#123;</span><br><span class="line">			$(&apos;#spinLoading&apos;).hide();</span><br><span class="line">			return this;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
-<p>示例：<a href="/pages/bootstrap-Modal组件封装.html">请点这里</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jquery</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bootstrap</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/26/bootstrap-Modal组件封装/">展开全文 >></a>
         </p>
       
 

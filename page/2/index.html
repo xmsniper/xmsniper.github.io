@@ -168,6 +168,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-bootstrap-Modal组件封装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/26/bootstrap-Modal组件封装/">bootstrap-Modal组件封装</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/26/bootstrap-Modal组件封装/" class="archive-article-date">
+  	<time datetime="2019-02-26T07:16:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>bootstrap-Modal组件封装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">(function() &#123;</span><br><span class="line">	$.extend(&#123;</span><br><span class="line">		xmDialog: &#123;</span><br><span class="line">		init: function(option) &#123;</span><br><span class="line">			var that = this;</span><br><span class="line">			var base = &#123;</span><br><span class="line">				el: &apos;#xmCustomModal&apos;,</span><br><span class="line">				classes: option.classes || &apos;modal-sm&apos;,</span><br><span class="line">				zIndex:option.zIndex||10000,</span><br><span class="line">				styles: option.styles || &#123;&#125;,//临时没用到</span><br><span class="line">				modalHeader: &#123;</span><br><span class="line">					title: option.title || &apos;&apos;,</span><br><span class="line">					styles: option.headerStyles||&#123;&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				modalBody: &#123;</span><br><span class="line">					content: option.content || &apos;&apos;,</span><br><span class="line">					styles: option.bodyStyles || &#123;&#125;,</span><br><span class="line">					loading: &apos;&lt;div id=&quot;spinLoading&quot; class=&quot;bg-white w-100 h-100 position-absolute row align-items-center justify-content-center m-0 spin-loading&quot; style=&quot;top:0;left:0;&quot;&gt;&lt;div class=&quot;loader&quot;&gt;&lt;div class=&quot;loader-inner line-spin-fade-loader&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&apos;,</span><br><span class="line">				&#125;,</span><br><span class="line">				modalFooter: &#123;</span><br><span class="line">					show: typeof option.showFooter === &apos;boolean&apos; ? option.showFooter : true,</span><br><span class="line">					styles: &#123;</span><br><span class="line">						&apos;justify-content&apos;: option.footerAlign||&apos;center&apos;</span><br><span class="line">					&#125;,</span><br><span class="line">					type: option.type || &apos;confirm&apos;,</span><br><span class="line">					buttons: &#123;</span><br><span class="line">						&apos;confirm&apos;: [&#123;</span><br><span class="line">							type: &apos;ok&apos;,</span><br><span class="line">							classes: &apos;btn-primary&apos;,</span><br><span class="line">							text: option.okText || &apos;确认&apos;,</span><br><span class="line">							fn: function() &#123;</span><br><span class="line">								option.ok ? option.ok(that) : that.$el.modal(&apos;hide&apos;);</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;, &#123;</span><br><span class="line">							type: &apos;cancel&apos;,</span><br><span class="line">							classes: &apos;btn-secondary&apos;,</span><br><span class="line">							text: &apos;取消&apos;,</span><br><span class="line">							fn: function() &#123;</span><br><span class="line">								option.cancel ? option.cancel(that) : that.$el.modal(&apos;hide&apos;);</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;],</span><br><span class="line">						&apos;tip&apos;: [&#123;</span><br><span class="line">							type: &apos;tip&apos;,</span><br><span class="line">							classes: &apos;btn-info&apos;,</span><br><span class="line">							text: &apos;我知道了&apos;,</span><br><span class="line">							fn: function() &#123;</span><br><span class="line">								option.confirm ? option.confirm(that) : that.$el.modal(&apos;hide&apos;);</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;]</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				formatStyle: function(obj) &#123;</span><br><span class="line">					if(!obj || $.isEmptyObject(obj)) &#123;</span><br><span class="line">						return &apos;&apos;;</span><br><span class="line">					&#125; else &#123;</span><br><span class="line">						var res = [];</span><br><span class="line">						for(var key in obj) &#123;</span><br><span class="line">							res.push(key + &apos;:&apos; + obj[key]);</span><br><span class="line">						&#125;</span><br><span class="line">						return res.join(&apos;;&apos;);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				shown: function() &#123;</span><br><span class="line">					option.shown ? option.shown(that) : that.hideLoading();</span><br><span class="line">				&#125;,</span><br><span class="line">				hidden: function() &#123;</span><br><span class="line">					option.hidden &amp;&amp; option.hidden(that);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;;</span><br><span class="line">			if(!$(base.el).length) &#123;</span><br><span class="line">				$(&apos;body&apos;).append(&apos;&lt;div id=&quot;&apos; + base.el.substring(1) + &apos;&quot; class=&quot;modal fade&quot; style=&quot;z-index:10000;&quot; tabindex=&quot;-1&quot; role=&quot;dialog&quot; aria-labelledby=&quot;exampleModalCenterTitle&quot; aria-hidden=&quot;true&quot; data-backdrop=&quot;static&quot;&gt;&lt;/div&gt;&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			that.$el = $(base.el);</span><br><span class="line">			var templete = [];</span><br><span class="line">			if(base.style) &#123;</span><br><span class="line">				that.$el.attr(&apos;style&apos;, base.style);</span><br><span class="line">			&#125;</span><br><span class="line">			templete.push(&apos;&lt;div class=&quot;modal-dialog modal-dialog-centered modal-dialog-scrollable &apos; + base.classes + &apos;&quot; role=&quot;document&quot; style=&quot;&apos; + base.formatStyle(base.styles) + &apos;&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;    &lt;div class=&quot;modal-content&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;        &lt;div class=&quot;modal-header border-0 py-2&quot; style=&quot;&apos; + base.formatStyle(base.modalHeader.styles) + &apos;&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;            &lt;h5 class=&quot;modal-title pr-3 text-nowrap overflow-hidden&quot; style=&quot;text-overflow:ellipsis;&quot;&gt;&apos; + base.modalHeader.title + &apos;&lt;/h5&gt;&apos;);</span><br><span class="line">			templete.push(&apos;            &lt;button type=&quot;button&quot; class=&quot;close&quot; style=&quot;margin:-0.5rem -1rem;padding:0.5rem 0.75rem;&quot; data-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;                &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&apos;);</span><br><span class="line">			templete.push(&apos;            &lt;/button&gt;&apos;);</span><br><span class="line">			templete.push(&apos;        &lt;/div&gt;&apos;);</span><br><span class="line">			templete.push(&apos;        &lt;div class=&quot;modalBody modal-body relative&quot; style=&quot;&apos; + base.formatStyle(base.modalBody.styles) + &apos;&quot;&gt;&apos;);</span><br><span class="line">			templete.push(&apos;            &lt;!--提示内容--&gt;&apos;);</span><br><span class="line">			templete.push(base.modalBody.content + base.modalBody.loading);</span><br><span class="line">			templete.push(&apos;        &lt;/div&gt;&apos;);</span><br><span class="line">			if(base.modalFooter.show) &#123;</span><br><span class="line">				templete.push(&apos;    &lt;div class=&quot;modal-footer border-0&quot; style=&quot;&apos; + base.formatStyle(base.modalFooter.styles) + &apos;&quot;&gt;&apos;);</span><br><span class="line">				base.modalFooter.buttons[base.modalFooter.type].forEach(function(item, index) &#123;</span><br><span class="line">					$[&apos;xmCustomModal&apos; + index] = item.fn;</span><br><span class="line">					templete.push(&apos;    &lt;button type=&quot;button&quot; class=&quot;btn &apos; + item.classes + &apos; px-4&quot; onclick=&quot;&apos; + &apos;$.xmCustomModal&apos; + index + &apos;();&quot;&gt;&apos; + item.text + &apos;&lt;/button&gt;&apos;);</span><br><span class="line">				&#125;);</span><br><span class="line">				templete.push(&apos;    &lt;/div&gt;&apos;);</span><br><span class="line">			&#125;</span><br><span class="line">			templete.push(&apos;    &lt;/div&gt;&apos;);</span><br><span class="line">			templete.push(&apos;&lt;/div&gt;&apos;);</span><br><span class="line">			that.$el.html(templete.join(&apos;&apos;));</span><br><span class="line">			that.$el.off(&apos;hidden.bs.modal&apos;).on(&apos;hidden.bs.modal&apos;, function() &#123;</span><br><span class="line">				base.hidden &amp;&amp; base.hidden(this);</span><br><span class="line">			&#125;);</span><br><span class="line">			that.$el.off(&apos;shown.bs.modal&apos;).on(&apos;shown.bs.modal&apos;, function() &#123;</span><br><span class="line">				base.shown &amp;&amp; base.shown(that);</span><br><span class="line">			&#125;);</span><br><span class="line">			that.$el.modal(&apos;show&apos;);</span><br><span class="line">			return this;</span><br><span class="line">		&#125;,</span><br><span class="line">		hideLoading: function() &#123;</span><br><span class="line">			$(&apos;#spinLoading&apos;).hide();</span><br><span class="line">			return this;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>示例：<a href="/pages/bootstrap-Modal组件封装.html">请点这里</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jquery</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">bootstrap</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/26/bootstrap-Modal组件封装/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-title美化提示框" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
